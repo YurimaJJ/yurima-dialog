@@ -44,9 +44,11 @@ AddEventHandler("yurima:dialog:menu", function (title, placeholders, cb)
 	dialogResult = nil
 	local placeholdersCount = tableLength(placeholders)
     openDialogMenu(title, placeholdersCount, placeholders, function (result)
-        if result ~= false then
-            cb(result)
-        end
+		if result ~= false then
+			cb(result)
+		else
+			cb(false)
+		end
     end)
 end)
 
